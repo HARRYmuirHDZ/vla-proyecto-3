@@ -1,6 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { AppComponent } from './app/app.component'; // Asegúrate de que esta ruta sea correcta
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideAnimations(),
+    // otros proveedores si es necesario
+  ],
+}).catch(err => console.error(err));
